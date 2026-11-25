@@ -1,0 +1,125 @@
+.tours {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  margin-top: 60px;
+}
+
+/* Обертка для сетки и стрелки */
+.tours__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Сетка для двух карточек */
+.tours__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1; /* Занимает всё место, оставляя немного для стрелки */
+}
+
+/* Карточка артиста */
+.card {
+  background-color: var(--accent-light-color);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+  }
+
+  &__role {
+    font-size: 14px;
+    color: var(--text-light-color);
+    margin: 0 0 24px 0;
+  }
+
+  &__events {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Одно событие внутри карточки */
+  &__event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Легкая линия-разделитель */
+    padding-bottom: 16px;
+
+    /* Убираем линию у последнего события */
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__event_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__date {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  &__time {
+    font-size: 14px;
+    color: var(--text-light-color);
+  }
+
+  &__place {
+    font-size: 14px;
+    color: var(--text-light-color);
+  }
+
+  &__btn {
+    background-color: var(--accent-color);
+    color: var(--text-white-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap; /* Чтобы текст не переносился на новую строку */
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* Круглая кнопка со стрелкой */
+.arrow_btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color); /* Желтоватая рамка */
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--border-color); /* Цвет стрелки */
+  flex-shrink: 0; /* Запрещает кнопке сжиматься */
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--accent-light-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+}

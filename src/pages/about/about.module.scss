@@ -1,0 +1,218 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.content {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px var(--container-padding);
+  position: relative; /* Для позиционирования кота внизу */
+}
+
+.title_wrapper {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main_title {
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.title_line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+/* === ТАЙМЛАЙН === */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+
+  /* Центральная линия */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: var(--border-color); /* Оранжевая линия */
+    transform: translateX(-50%);
+  }
+}
+
+.timeline_item {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr; /* Левая часть, центр (для года), правая часть */
+  gap: 0;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.img_left {
+  grid-column: 1;
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+}
+
+.text_right {
+  grid-column: 3;
+  padding-left: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light-color);
+}
+
+/* Для блоков, где текст слева, а картинка справа */
+.timeline_item.reversed {
+  .text_left {
+    grid-column: 1;
+    padding-right: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light-color);
+    text-align: right; /* Текст прижат к линии */
+  }
+
+  .img_right {
+    grid-column: 3;
+    padding-left: 30px;
+    display: flex;
+    justify-content: flex-start;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+/* Точка на линии с годом */
+.point {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.year {
+  background-color: var(--border-light-color); /* Оранжевый фон */
+  color: var(--border-dark-color);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid var(--border-color); /* Белая обводка вокруг года */
+}
+
+/* === НИЖНИЕ БЛОКИ === */
+.outro_block {
+  max-width: 600px;
+  margin: 60px 0 40px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light-color);
+}
+
+.more_btn {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: var(--border-light-color);
+  color:var(--text-color);
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity 0.3s;
+  border: 2px solid var(--border-color);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.booking_section {
+  max-width: 600px;
+  font-size: 14px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+}
+
+.numbered_list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+
+  li {
+    color: var(--text-light-color);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+}
+
+.address {
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+/* Кот в правом нижнем углу */
+.bottom_cat {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 160px;
+  height: auto;
+}
+
+/* Адаптация под мобильные */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 30px; /* Сдвигаем линию влево на телефонах */
+  }
+  
+  .timeline_item, .timeline_item.reversed {
+    grid-template-columns: 60px 1fr;
+    gap: 10px;
+    
+    .point { grid-column: 1; }
+    
+    .img_left, .img_right, .text_left, .text_right {
+      grid-column: 2;
+      text-align: left;
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    .text_left { order: 2; }
+    .img_right { order: 1; }
+  }
+}

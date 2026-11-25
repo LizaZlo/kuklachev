@@ -1,0 +1,48 @@
+.poster {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+
+  &__arrow_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__arrow_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: '↓';
+      font-size: 24px;
+      color: var(--border-color);
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: var(--accent-light-color);
+      border-color: var(--accent-color);
+      
+      &::after {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

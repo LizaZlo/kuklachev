@@ -1,0 +1,272 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.content {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px var(--container-padding);
+}
+
+.section {
+  margin-bottom: 80px; /* Большой отступ между секциями */
+}
+
+/* Заголовки с линиями */
+.title_center {
+  text-align: center;
+  margin-bottom: 40px;
+  h2 { font-size: 32px; font-weight: 400; color: var(--text-color); margin-bottom: 15px; }
+}
+
+.title_line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+/* Общие стили для кнопок */
+.btn_yellow {
+  background-color: var(--border-color);
+  color: var(--text-white-color);
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+/* --- СЕКЦИЯ 1: Кошки --- */
+.intro_text {
+  font-size: 16px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  color: var(--text-light-color);
+}
+
+.cats_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.cat_card {
+  text-align: center;
+  h3 { font-size: 24px; margin: 15px 0 5px; }
+}
+
+.cat_img_wrapper {
+  width: 100%;
+  max-width: 200px;
+  height: auto; /* Высота подстроится сама */
+  margin: 0 auto;
+  
+  img { width: 100%; height: auto; object-fit: block;
+  object-position: center; }
+}
+
+.cat_location { font-size: 14px; color: var(--text-light-color); margin-bottom: 10px; }
+.cat_desc { font-size: 13px; color: var(--text-color); line-height: 1.5; }
+
+/* --- СЕКЦИЯ 2: Помощники --- */
+.helpers_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.helper_card {
+  background-color: var(--background-color);
+  padding: 0 10px 10px;
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  
+  h3 { 
+    font-size: 20px; 
+    margin: 0 0 5px 0; 
+    color: var(--text-color);
+  }
+}
+
+.helper_img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2;
+  margin-top: -110px;
+  margin-bottom: 15px;
+}
+
+.helper_role { font-size: 12px; color: var(--text-light-color); margin-bottom: 15px; }
+.helper_desc { font-size: 13px; color: var(--text-color); line-height: 1.5; }
+
+/* --- СЕКЦИЯ 3: Из приюта на сцену --- */
+.shelter_story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.story_img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.story_text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light-color);
+  p { margin-bottom: 15px; }
+}
+
+.highlight {
+  font-size: 18px;
+  color: var(--text-color);
+  font-weight: 500;
+  border-left: 3px solid var(--border-color);
+  padding-left: 15px;
+}
+
+/* --- СЕКЦИЯ 4: Бездомные животные --- */
+.two_columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  font-size: 14px;
+  color: var(--text-light-color);
+  line-height: 1.6;
+}
+
+/* --- СЕКЦИЯ 5: Приют --- */
+.shelter_block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.shelter_text {
+  font-size: 14px;
+  color: var(--text-light-color);
+  line-height: 1.6;
+  h3 { font-size: 24px; color: var(--text-color); margin-bottom: 15px; }
+  p { margin-bottom: 15px; }
+}
+
+.shelter_images {
+  position: relative;
+}
+
+.shelter_main_img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.shelter_small_imgs {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--text-white-color);
+    object-fit: cover;
+  }
+}
+
+/* Статистика */
+.stats_row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.stat_box {
+  background-color: var(--accent-color);
+  color: var(--text-white-color);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  h4 { font-size: 28px; margin-bottom: 5px; line-height: 1.1; }
+  p { font-size: 13px; }
+}
+
+/* --- СЕКЦИЯ 6: Котята ищут дом --- */
+.final_story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.final_text {
+  font-size: 14px;
+  color: var(--text-light-color);
+  line-height: 1.6;
+  p { margin-bottom: 15px; }
+}
+
+.contact_info {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 16px;
+  border-left: 3px solid var(--border-color);
+  padding-left: 15px;
+}
+
+.small_text {
+  font-size: 12px;
+}
+
+.final_images {
+  img {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+
+.final_video {
+  width: 100%;
+  max-width: 500px; /* Ограничиваем ширину видео */
+  border-radius: 12px; /* Скругляем углы, как у картинок */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Добавляем легкую тень */
+  display: block;
+  margin: 0 auto; /* Центрируем */
+  object-fit: cover; /* Заполняет контейнер без искажений (если нужно) */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 900px) {
+  .cats_grid, .helpers_grid, .shelter_story, .two_columns, .shelter_block, .stats_row, .final_story {
+    grid-template-columns: 1fr; /* В одну колонку на телефонах */
+  }
+  .shelter_small_imgs {
+    position: static;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

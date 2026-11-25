@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		// Синтаксис в бандле (актуальные браузеры; ES5 в TS 6+ устарел)
+		"target": "ES2020",
+		// ES-модули для import/export
+		"module": "ESNext",
+		// Разрешение модулей для Webpack (вместо устаревшего "node" / node10)
+		"moduleResolution": "bundler",
+		// Типы для DOM и современного JS
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		// JSX без import React в каждом файле (react-jsx)
+		"jsx": "react-jsx",
+		// Каждый файл — отдельный модуль (нужно для Webpack и react-refresh)
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		// Строгая проверка типов
+		"strict": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		// Source maps для отладки в DevTools
+		"sourceMap": true,
+		"allowJs": true,
+		// Подсказки типов для классов из *.module.scss в редакторе
+		"plugins": [{ "name": "typescript-plugin-css-modules" }]
+	},
+	"outDir": "./dist/",
+	"include": ["src/**/*"]
+}

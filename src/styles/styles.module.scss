@@ -1,0 +1,46 @@
+@import url('../shared/assets/vendor/normalize.css');
+@import url('../shared/assets/fonts/fonts.css');
+
+:global(:root) {
+	/* Base */
+	--background-color: #FAF7F2;
+	--background-secondary-color: #ebe9e4;
+
+	/* Text */
+	--text-color: #29251F;
+	--text-light-color: #555555;
+	--text-white-color: #fff;
+
+	/* Accent */
+	--accent-color: #E1781B;
+	--accent-light-color: #F2E2D4;
+
+	/* Borders */
+	--border-color: #DAAF03;
+	--border-light-color: #F4F2E9;
+	--border-dark-color: #a58401;
+
+	/* Layout */
+	--container-width: 1200px;
+	--container-padding: 24px;
+	--border-radius: 12px;
+	--breakpoint-tablet: 768px;
+	--breakpoint-desktop: 1280px;
+
+	/* Typography */
+	color: var(--text-color);
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Arapey', sans-serif;
+	font-style: normal;
+	line-height: 1.5;
+
+	/* Rendering */
+	color-scheme: light;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-size-adjust: 100%;
+	background-color: var(--background-color);
+}

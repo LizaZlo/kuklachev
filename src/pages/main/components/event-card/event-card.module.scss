@@ -1,0 +1,108 @@
+.card {
+  display: grid;
+  grid-template-columns: 90px 160px 1fr; /* 3 колонки: дата, картинка, текст */
+  gap: 20px;
+  background-color: var(--accent-light-color); /* Бежевый фон */
+  border-radius: 20px;
+  padding: 15px 25px;
+  align-items: center;
+  margin-bottom: 16px;
+
+  /* 1. Блок с датой */
+  &__date_block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__date {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-color);
+    margin-bottom: 4px;
+  }
+
+  &__date_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__day {
+    font-size: 14px;
+    color: var(--text-color);
+  }
+
+  &__time {
+    font-size: 13px;
+    color: var(--text-light-color);
+  }
+
+  /* 2. Картинка */
+  &__image_wrapper {
+    width: 100%;
+    height: 110px; /* Высота картинки, подберите под макет */
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 3. Текст и кнопки */
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+  }
+
+  &__description {
+    font-size: 13px;
+    color: var(--text-light-color);
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    max-width: 90%; /* Чтобы текст не прилипал к краю */
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* Кнопки */
+  &__btn_outline, &__btn_solid {
+    padding: 6px 16px;
+    border-radius: 50px; /* Овальные кнопки */
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    &:hover { opacity: 0.8; }
+  }
+
+  &__btn_outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+
+  &__btn_solid {
+    background-color: var(--accent-color); /* Оранжевая кнопка */
+    border: none;
+    color: var(--text-white-color);
+  }
+}

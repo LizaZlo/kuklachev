@@ -1,0 +1,44 @@
+.submenu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  background-color: transparent; /* Или легкий фон, если нужно */
+  margin-bottom: 20px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+
+  &__link {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--border-light-color);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+
+    /* Наведение */
+    &:hover {
+      border-color: var(--border-color);
+      background-color: var(--border-light-color);
+    }
+
+    /* Активный пункт (выделяется желтым) */
+    &.active {
+      background-color: var(--border-light-color); /* Ваш желтый/оранжевый */
+      border-color: var(--border-color);
+      color: var(--border-dark-color);
+    }
+  }
+}

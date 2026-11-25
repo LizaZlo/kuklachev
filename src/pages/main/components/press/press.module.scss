@@ -1,0 +1,6 @@
+.press { max-width: 1000px; margin: 0 auto; padding: 0 var(--container-padding); }
+.card { display: grid; grid-template-columns: 200px 1fr; gap: 20px; background: var(--accent-light-color); padding: 20px; border-radius: 20px; align-items: center; }
+.image { width: 100%; border-radius: 12px; }
+.content h3 { font-size: 18px; margin-bottom: 10px; font-weight: 400; }
+.content p { font-size: 14px; color: var(--text-light-color); margin-bottom: 15px; }
+.btn { background: transparent; color: var(--text-color); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 50px; font-size: 12px; cursor: pointer; }
